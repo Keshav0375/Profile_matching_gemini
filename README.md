@@ -1,18 +1,18 @@
 # Profile_matching_gemini
 Matching resume and job description
 
- **# Resume Evaluation API**
+# Resume Evaluation API
 
-**## Description**
+## Description
 
 This API leverages Google's Gemini model to evaluate resumes for key technical roles. It assesses resume-job description (JD) matching scores, identifies missing keywords, and provides a concise profile summary.
 
-**## Endpoints**
+## Endpoints
 
 * **POST /evaluate_resume**
     Evaluates a resume against a given job description.
 
-**## Request Data**
+## Request Data
 
 **Parameters:**
 
@@ -28,7 +28,7 @@ This API leverages Google's Gemini model to evaluate resumes for key technical r
 }
 ```
 
-**## Response Data**
+## Response Data
 
 **Data Structure:**
 
@@ -50,13 +50,13 @@ This API leverages Google's Gemini model to evaluate resumes for key technical r
 }
 ```
 
-**## Required Packages:**
+## Required Packages:
 - Download requirements.txt using pip install -r requirements.txt
   * `fastapi`
   * `python-dotenv`
   * `google-generativeai`
 
-**## Additional Notes**
+## Additional Notes
 
 * Ensure you have a valid Google API key configured in your environment variable `GOOGLE_API_KEY`.
 
