@@ -20,19 +20,22 @@ def get_gemini_repsonse(input):
 
 @app.post("/evaluate_resume")
 async def evaluate_resume(resume_text: str = Form(...), job_description: str = Form(...)):
-    # Call the Gemini model with the formatted input
     input = f"""
-    Hey Act Like a skilled or very experience ATS(Application Tracking System)
-    with a deep understanding of tech field,software engineering,data science ,data analyst
-    and big data engineer. Your task is to evaluate the resume based on the given job description.
-    You must consider the job market is very competitive and you should provide 
-    best assistance for improving thr resumes. Assign the percentage Matching based 
-    on Jd and
-    the missing keywords with high accuracy
-    resume:{resume_text}
-    description:{job_description}
+    Hey, act like a skilled or very experienced ATS (Application Tracking System) 
+    with a deep understanding of the tech field, specifically in software engineering, 
+    data science, data analysis, and big data engineering. Your task is to thoroughly evaluate 
+    the provided resume in comparison to the given job description. Keep in mind that 
+    the job market is highly competitive, and your assistance in enhancing the resumes 
+    is crucial. Provide a percentage match based on the job description and identify any 
+    missing keywords with high accuracy. Please analyze the following documents:
+    
+    Resume:
+    {resume_text}
+    
+    Job Description:
+    {job_description}
 
-    I want the response in one single string having the structure
+    I expect the response in one single string with the following structure:
     {{"JD Match":"%","MissingKeywords:[]","Profile Summary":""}}
     """
     response = get_gemini_repsonse(input)
